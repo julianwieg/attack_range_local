@@ -8,8 +8,8 @@ The Attack Range is a detection development platform, which solves three main ch
 Attack Range can be built in three different ways:
 
 - **locally** with vagrant and virtualbox
-- **cloud** using terraform and AWS, see [attack\_range](https://github.com/splunk/attack_range)
-- **cloud-only** see the [attack\_range\_cloud](https://github.com/splunk/attack_range_cloud/) project for details
+- **cloud** using terraform and AWS or Azure, see [attack_range](https://github.com/splunk/attack_range)
+- **cloud-only** see [attack_range_cloud](https://github.com/splunk/attack_range_cloud/)
 
 ## Installation 🏗
 
@@ -50,7 +50,7 @@ Attack Range supports different actions:
 - Destroy Attack Range
 - Stop Attack Range
 - Resume Attack Range
-
+- Dump Attack Data
 
 ### Build Attack Range Local
 - Build Attack Range Local
@@ -62,6 +62,12 @@ python attack_range_local.py -a build
 - Perform Attack Simulation
 ```
 python attack_range_local.py -a simulate -st T1003.001 -t attack-range-windows-domain-controller
+```
+
+### Show Attack Range Status
+- Show Attack Range Status
+```
+python attack_range_local.py -lm
 ```
 
 ### Destroy Attack Range Local
@@ -80,6 +86,12 @@ python attack_range_local.py -a stop
 - Resume Attack Range Local
 ```
 python attack_range_local.py -a resume
+```
+
+## Dump Attack Data
+- Dump Attack Range Data
+```
+python attack_range_local.py -a dump -dn dump_data_folder
 ```
 
 ## Features 💍
@@ -128,7 +140,7 @@ Please use the [GitHub issue tracker](https://github.com/splunk/attack_range/iss
 If you have questions or need support, you can:
 
 * Post a question to [Splunk Answers](http://answers.splunk.com)
-* Join the [#security-research](https://splunk-usergroups.slack.com/messages/C1RH09ERM/) room in the [Splunk Slack channel](http://splunk-usergroups.slack.com)
+* Join the [#security-research](https://splunk-usergroups.slack.com/archives/C1S5BEF38) room in the [Splunk Slack channel](http://splunk-usergroups.slack.com)
 * If you are a Splunk Enterprise customer with a valid support entitlement contract and have a Splunk-related question, you can also open a support case on the https://www.splunk.com/ support portal
 
 ## Contributing 🥰
@@ -147,6 +159,7 @@ We welcome feedback and contributions from the community! Please see our [contri
 * Rico Valdez
 * [Dimitris Lambrou](https://twitter.com/etz69)
 * [Dave Herrald](https://twitter.com/daveherrald)
+* [Kai Seidenschnur](https://www.linkedin.com/in/kai-seidenschnur-ab42889a)
 
 
 ## License

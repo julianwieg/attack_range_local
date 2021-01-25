@@ -30,6 +30,7 @@ config.vm.define "attack-range-splunk-server" do |config|
         install_es: '{{ install_es }}',
         install_mltk: '{{ install_mltk }}',
         splunk_es_app: '{{ splunk_es_app }}',
+        splunk_es_app_version: '{{ splunk_es_app_version }}',
         phantom_app: '{{ phantom_app }}',
         phantom_server: '{{ phantom_server }}',
         phantom_server_private_ip: '{{ phantom_server_private_ip }}',
@@ -52,7 +53,7 @@ config.vm.define "attack-range-splunk-server" do |config|
   config.vm.provider "virtualbox" do |vb, override|
     vb.gui = true
     vb.name = "#{VM_NAME}"
-    vb.customize ["modifyvm", :id, "--memory", 6144]
-    vb.customize ["modifyvm", :id, "--cpus", 4]
+    vb.customize ["modifyvm", :id, "--memory", {{ splunk_server_memory }}]
+    vb.customize ["modifyvm", :id, "--cpus", {{ splunk_server_cpus }}]
   end
 end
